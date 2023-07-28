@@ -1,29 +1,27 @@
 curso:
-  - turmas
+  - períodos (turmas)
 
-turma:
+período (turma):
   - disciplinas
-  - vagas(horario)
+  - vagas de horário na grade
   - obs:
-      - não existem vagas num mesmo dia e horario da turma
+      - não existem duas disciplinas na mesma vaga de horário
 
 vaga:
-  - dia
-  - hora_fim
-  - hora_inicio
+  - dia da semana
+  - horario
+    - 0: 18:30h - 20:10h
+    - 1: 20:10h - 21:50h
 
 disciplina:
-  - docente
-  - encontros(semanais)
+  - docente(s)
+  - encontros semanais (cada encontro é uma vaga do horário)
   - obs:
-      - cada encontro é uma vaga do horário
       - tem a chance de ter apenas um encontro por dia
-      - tem a chance de ter encontros todos os dias
-      - pelo menos um docente
+      - tem a chance de ter todos os encontros no mesmo dia
 
 docente:
-  - dias_sem_lecionar
-  - aulas_consecutivos(boolean)
-  - numero_de_disciplias
-  - obs:
-      - quanto menos dias consecutivos, melhor
+  - dias que não pode lecionar
+  - deve ter aulas concentradas ou não
+  - conjunto de disciplinas
+  - dias consecutivos de aula
