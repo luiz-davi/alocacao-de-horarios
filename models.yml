@@ -9,9 +9,9 @@ período (turma):
 
 vaga:
   - dia da semana
-  - horario
-    - 0: 18:30h - 20:10h
-    - 1: 20:10h - 21:50h
+  - horário:
+      - 0: 18:30h - 20:10h
+      - 1: 20:10h - 21:50h
 
 disciplina:
   - docente(s)

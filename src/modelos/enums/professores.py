@@ -1,0 +1,24 @@
+professores = [
+    'Luiz',  # 0
+    'Gersonilo',  # 1
+    'Ryan',  # 2
+    'Assuero',  # 3
+    'Rodrigo',  # 4
+    'Rodriguinho',  # 6
+    'Thais',  # 7
+    'Kadna',  # 8
+    'Priscila',  # 9
+    'Sergio',  # 10
+    'Igor',  # 11
+    'Marcios',  # 12
+    'Dimas',  # 13
+    'Jean',  # 14
+    'Normando',  # 15
+    'Sansuke',  # 16
+    'Alvaro',  # 17
+    'Wellington',  # 18
+    'Maria',  # 19
+    'Tiago',  # 20
+    'Mary',  # 21
+    'Ingles(prof)',  # 22
+]
