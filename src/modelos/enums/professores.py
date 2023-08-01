@@ -1,24 +1,26 @@
 professores = [
-    'Luiz',  # 0
-    'Gersonilo',  # 1
-    'Ryan',  # 2
-    'Assuero',  # 3
-    'Rodrigo',  # 4
-    'Rodriguinho',  # 6
-    'Thais',  # 7
-    'Kadna',  # 8
-    'Priscila',  # 9
-    'Sergio',  # 10
-    'Igor',  # 11
-    'Marcios',  # 12
-    'Dimas',  # 13
-    'Jean',  # 14
-    'Normando',  # 15
-    'Sansuke',  # 16
-    'Alvaro',  # 17
-    'Wellington',  # 18
-    'Maria',  # 19
+    'Marcius',  # 0
+    'Ryan',  # 1
+    'Luis',  # 2
+    'Renê',  # 3
+    'Normando',  # 4
+    'Gersonilo',  # 6
+    'Igor',  # 7
+    'Sansuke',  # 8
+    'Wellington',  # 9
+    'Romero',  # 10
+    'Helder',  # 11
+    'Leila',  # 12
+    'Diana',  # 13
+    'R. Andrade',  # 14
+    'Priscila',  # 15
+    'Alvaro',  # 16
+    'Maria',  # 17
+    'Kádna',  # 18
+    'Assuero',  # 19
     'Tiago',  # 20
-    'Mary',  # 21
-    'Ingles(prof)',  # 22
+    'Sérgio',  # 21
+    'Icaro',  # 22
+    'Jean',  # 23
+    'R. Gusmão',  # 24
 ]
