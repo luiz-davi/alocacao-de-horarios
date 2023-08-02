@@ -1,5 +1,4 @@
 from modelos.enums.professores import professores
-from modelos.enums.disciplinas import disciplinas
 import infos
 from modelos.docente import Docente
 
