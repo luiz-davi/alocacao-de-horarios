@@ -1,11 +1,19 @@
-from modelos.enums.professores import professores
-import infos
+import os
+import sys
+
+# Obter o caminho absoluto da pasta 'factory'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+factory_path = os.path.join(current_dir, '..')
+sys.path.append(factory_path)
+
 from modelos.docente import Docente
+from modelos.enums.professores import professores
+from factory.infos import *
 
 def criar_professores():
     docentes = []
     for nome in professores:
-        infos_prof = infos.professores(nome)
+        infos_prof = retornar_professores(nome)
         professor = Docente(nome, infos_prof['dias_sem_lecionar'],
                             infos_prof['aulas_concentradas'],
                             infos_prof['conjunto_de_disciplinas'])
@@ -16,7 +24,7 @@ def criar_professores():
 
 def criar_disciplinas():
     docentes = criar_professores()
-    cadeiras = infos.disciplinas()
+    cadeiras = retornar_disciplinas()
 
     for docente in docentes:
         for disciplina in docente.conjunto_de_disciplinas:

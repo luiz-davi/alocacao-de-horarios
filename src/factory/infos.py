@@ -1,7 +1,14 @@
+import os
+import sys
+
+# Obter o caminho absoluto da pasta 'factory'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+factory_path = os.path.join(current_dir, '..')
+sys.path.append(factory_path)
+
 from modelos.disciplina import Disciplina
 
-
-def professores(nome):
+def retornar_professores(nome):
     return {
         'marcius': {
             'dias_sem_lecionar': [],
@@ -199,8 +206,7 @@ def professores(nome):
         },
     }
 
-
-def disciplinas():
+def retornar_disciplinas():
     return [
         Disciplina('calculo 1', 2),
         Disciplina('introducao a programacao', 3),
