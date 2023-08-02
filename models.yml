@@ -22,6 +22,6 @@ disciplina:
 
 docente:
   - dias que não pode lecionar
-  - deve ter aulas concentradas ou não
+  - deve ter aulas concentradas ou não:
+      - é preferível que ele possua aulas no mesmo dia ao invés de em dias separados
   - conjunto de disciplinas
-  - dias consecutivos de aula
