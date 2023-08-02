@@ -1,4 +1,4 @@
-from factory.grade import exec
+from factory import grade
 import os
 import sys
 
@@ -8,7 +8,4 @@ src_path = os.path.join(current_dir, '.')
 sys.path.append(src_path)
 
 
-docentes, cadeiras = exec()
-
-print(docentes[0].nome)
-print(cadeiras[0].nome)
+professores, cadeiras = grade.exec()

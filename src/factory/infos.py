@@ -113,7 +113,7 @@ def retornar_professores(nome):
             'dias_sem_lecionar': [2, 3],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
-                'paradigmas de linguagens de programacao',
+                'projeto e analise de algoritmos',
                 'optativa 5',
             ],
         },
@@ -131,7 +131,7 @@ def retornar_professores(nome):
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'redes de computadores',
-                'optativa 1'
+                'optativa 1',
                 'estagio supervisionado obrigatorio',
             ],
 
@@ -157,7 +157,7 @@ def retornar_professores(nome):
             'dias_sem_lecionar': [0, 1, 2],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
-                'introducao a programacao',
+                'introducao a computacao',
                 'sistemas operacionais',
                 'computadores e sociedade',
             ],
@@ -202,6 +202,13 @@ def retornar_professores(nome):
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'tcc',
+            ],
+        },
+        'normando': {
+            'dias_sem_lecionar': [],
+            'aulas_concentradas': False,
+            'conjunto_de_disciplinas': [
+                'geometria analitica',
             ],
         },
     }

@@ -26,15 +26,15 @@ def criar_disciplinas():
     docentes = criar_professores()
     cadeiras = retornar_disciplinas()
 
-    for docente in docentes:
-        for disciplina in docente.conjunto_de_disciplinas:
-            for cadeira in cadeiras:
-                if disciplina == cadeira.nome:
-                    cadeira.docentes.append(docente)
+    for cadeira in cadeiras:
+        for docente in docentes:
+            if cadeira.nome in docente.conjunto_de_disciplinas:
+                cadeira.docentes.append(docente)
 
     return docentes, cadeiras
 
 
 def exec():
     docentes, cadeiras = criar_disciplinas()
+
     return docentes, cadeiras
