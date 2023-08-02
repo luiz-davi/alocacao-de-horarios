@@ -2,8 +2,6 @@ from modelos.enums.professores import professores
 from modelos.enums.disciplinas import disciplinas
 import infos
 from modelos.docente import Docente
-from modelos.disciplina import Disciplina
-
 
 def criar_professores():
     docentes = []
@@ -32,5 +30,4 @@ def criar_disciplinas():
 
 def exec():
     docentes, cadeiras = criar_disciplinas()
-
     return docentes, cadeiras
