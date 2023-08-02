@@ -5,14 +5,14 @@ def professores(nome):
     return {
         'marcius': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'calculo 1',
             ],
         },
         'luis': {
             'dias_sem_lecionar': [3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'introducao a programacao',
                 'optativa 3',
@@ -20,7 +20,7 @@ def professores(nome):
         },
         'ryan': {
             'dias_sem_lecionar': [0, 1],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'inteligencia artificial',
                 'optativa 4',
@@ -28,7 +28,7 @@ def professores(nome):
         },
         'gersonilo': {
             'dias_sem_lecionar': [0, 1],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'logica matematica',
                 'algebra linear',
@@ -37,7 +37,7 @@ def professores(nome):
         },
         'igor': {
             'dias_sem_lecionar': [3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'poo',
                 'aed 2',
@@ -45,28 +45,28 @@ def professores(nome):
         },
         'sansuke': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'calculo 2',
             ],
         },
         'wellington': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'fisica'
             ],
         },
         'romero': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'probabilidade e estatistica'
             ],
         },
         'helder': {
             'dias_sem_lecionar': [3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas digitais',
                 'arquitetura de computadores',
@@ -74,21 +74,21 @@ def professores(nome):
         },
         'niege': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'metodologia cientifica'
             ],
         },
         'diana': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'ingles'
             ],
         },
         'r. Andrade': {
             'dias_sem_lecionar': [2, 3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'engenharia de software',
                 'interacao humano-computador',
@@ -96,7 +96,7 @@ def professores(nome):
         },
         'priscilla': {
             'dias_sem_lecionar': [2, 3],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'aed 1',
                 'optativa 2',
@@ -104,7 +104,7 @@ def professores(nome):
         },
         'alvaro': {
             'dias_sem_lecionar': [2, 3],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'paradigmas de linguagens de programacao',
                 'optativa 5',
@@ -112,7 +112,7 @@ def professores(nome):
         },
         'maria': {
             'dias_sem_lecionar': [2, 3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'teoria da computacao',
                 'compiladores',
@@ -121,7 +121,7 @@ def professores(nome):
         },
         'kadna': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'redes de computadores',
                 'optativa 1'
@@ -131,7 +131,7 @@ def professores(nome):
         },
         'assuero': {
             'dias_sem_lecionar': [2, 3, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas de informacao',
                 'empreendedorismo',
@@ -140,7 +140,7 @@ def professores(nome):
         },
         'tiago': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'reconhecimento de padroes'
             ],
@@ -148,7 +148,7 @@ def professores(nome):
         },
         'sergio': {
             'dias_sem_lecionar': [0, 1, 2],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'introducao a programacao',
                 'sistemas operacionais',
@@ -158,7 +158,7 @@ def professores(nome):
         },
         'icaro': {
             'dias_sem_lecionar': [0, 1],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'computacao grafica',
                 'optativa 6'
@@ -167,7 +167,7 @@ def professores(nome):
         },
         'jean': {
             'dias_sem_lecionar': [0, 1, 2],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas distribuidos',
                 'optativa 7',
@@ -175,7 +175,7 @@ def professores(nome):
         },
         'r. gusmao': {
             'dias_sem_lecionar': [0, 1],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'projeto de desenvolvimento',
                 'estagio supervisionado obrigatorio',
@@ -184,7 +184,7 @@ def professores(nome):
         },
         'dimas': {
             'dias_sem_lecionar': [0, 1, 4],
-            'aulas_concentradas': true,
+            'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'paradigmas de linguagens de programacao',
                 'banco de dados',
@@ -192,7 +192,7 @@ def professores(nome):
         },
         'thais': {
             'dias_sem_lecionar': [],
-            'aulas_concentradas': false,
+            'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'tcc',
             ],
