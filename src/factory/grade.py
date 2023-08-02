@@ -1,3 +1,6 @@
+from factory.infos import *
+from modelos.enums.professores import professores
+from modelos.docente import Docente
 import os
 import sys
 
@@ -6,9 +9,6 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 factory_path = os.path.join(current_dir, '..')
 sys.path.append(factory_path)
 
-from modelos.docente import Docente
-from modelos.enums.professores import professores
-from factory.infos import *
 
 def criar_professores():
     docentes = []
@@ -30,7 +30,7 @@ def criar_disciplinas():
         for disciplina in docente.conjunto_de_disciplinas:
             for cadeira in cadeiras:
                 if disciplina == cadeira.nome:
-                    cadeira.docente.append(docente)
+                    cadeira.docentes.append(docente)
 
     return docentes, cadeiras
 

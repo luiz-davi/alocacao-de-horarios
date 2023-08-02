@@ -1,3 +1,4 @@
+from modelos.disciplina import Disciplina
 import os
 import sys
 
@@ -6,10 +7,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 factory_path = os.path.join(current_dir, '..')
 sys.path.append(factory_path)
 
-from modelos.disciplina import Disciplina
 
 def retornar_professores(nome):
-    return {
+    infos_professor = {
         'marcius': {
             'dias_sem_lecionar': [],
             'aulas_concentradas': False,
@@ -93,7 +93,7 @@ def retornar_professores(nome):
                 'ingles'
             ],
         },
-        'r. Andrade': {
+        'r. andrade': {
             'dias_sem_lecionar': [2, 3, 4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
@@ -205,6 +205,9 @@ def retornar_professores(nome):
             ],
         },
     }
+
+    return infos_professor[nome]
+
 
 def retornar_disciplinas():
     return [
