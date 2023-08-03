@@ -5,3 +5,5 @@ dias = {
     3: 'Quinta',
     4: 'Sexta'
 }
+
+lista_dias = ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta']
