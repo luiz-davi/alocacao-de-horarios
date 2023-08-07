@@ -1,5 +1,5 @@
-from enums.horarios import lista_horarios
-from enums.dias import lista_dias
+from modelos.enums.horarios import lista_horarios
+from modelos.enums.dias import lista_dias
 from tabulate import tabulate
 
 class Curso:
