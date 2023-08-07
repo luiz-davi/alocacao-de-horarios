@@ -1,4 +1,3 @@
-from modelos.disciplina import Disciplina
 import os
 import sys
 
@@ -6,6 +5,7 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 factory_path = os.path.join(current_dir, '..')
 sys.path.append(factory_path)
+from modelos.disciplina import Disciplina
 
 
 def retornar_professores(nome):
