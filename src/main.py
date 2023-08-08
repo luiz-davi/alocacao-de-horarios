@@ -27,8 +27,7 @@ def possuem_aulas_concentradas(docentes):
 
 docentes, disciplinas_por_periodo = professores_disciplinas();
 
-# Lista de matrizes de horários vazia para cada período
-periodos = []  # aqui serão adicionados os períodos
+periodos = []
 quantidade_dias = len(lista_dias)
 quantidade_horarios = len(lista_horarios)
 
