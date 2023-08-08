@@ -39,7 +39,7 @@ def criar_disciplinas():
     return docentes, cadeiras
 
 
-def exec():
+def professores_disciplinas():
     docentes, cadeiras = criar_disciplinas()
 
     return docentes, cadeiras

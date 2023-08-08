@@ -8,12 +8,12 @@ factory_path = os.path.join(current_dir, '..')
 sys.path.append(factory_path)
 
 from modelos.curso import Curso
-from infos import retornar_disciplinas
+import oferta_disciplinas
 
-disciplinas_por_periodo = retornar_disciplinas()
+docentes, disciplinas_por_periodo = oferta_disciplinas.exec();
 
-# Cria uma lista de matrizes de horários vazia para cada período
-periodos = [[] for _ in range(9)]  # 9 períodos (de 1 a 9)
+# Lista de matrizes de horários vazia para cada período
+periodos = []  # aqui serão adicionados os períodos
 
 # Função para preencher uma matriz de horários com as disciplinas do período
 def preencher_horario(periodo, matriz_horario):
@@ -22,10 +22,10 @@ def preencher_horario(periodo, matriz_horario):
     random.shuffle(disciplinas_do_periodo)  # Embaralha as disciplinas do período
     for disciplina in disciplinas_do_periodo:
         aulas_restantes = disciplina.quantidade_de_aulas
-        for i in range(2):
-            for j in range(5):
-                if aulas_restantes > 0 and matriz_horario[i][j] == '-':
-                    matriz_horario[i][j] = disciplina.nome
+        for horario in range(2):
+            for dia in range(5):
+                if aulas_restantes > 0 and matriz_horario[horario][dia] == '-':
+                    matriz_horario[horario][dia] = disciplina.nome
                     aulas_restantes -= 1
                     horarios_disponiveis -= 1
                     if aulas_restantes == 0:
@@ -39,6 +39,6 @@ def preencher_horario(periodo, matriz_horario):
 for periodo in range(1, 10):
     matriz_horario = [['-' for _ in range(5)] for _ in range(2)]  # Cria matriz de 2x5 com '-'
     preencher_horario(periodo, matriz_horario)
-    periodos[periodo - 1] = matriz_horario  # Atualiza diretamente a matriz de horário do período
+    periodos.append(matriz_horario)  # Atualiza diretamente a matriz de horário do período
 
 Curso.imprimir_grade(periodos)
