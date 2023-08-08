@@ -25,9 +25,9 @@ disciplinas = [
     # Quarto
     'arquitetura de computadores',
     'engenharia de software',
-    'paradigmas de linguagens de programacao',
+    'plp',
     'banco de dados',
-    'projeto e analise de algoritmos',
+    'paa',
 
     # Quinto
     'teoria da computacao',
@@ -44,9 +44,9 @@ disciplinas = [
     'computacao grafica',
 
     # Sétimo
-    'interacao humano-computador'
-    'projeto de desenvolvimento',
-    'computadores e sociedade',
+    'ihc'
+    'projetao',
+    'comp e soc',
     'optativa 1',
     'optativa 2',
 
@@ -58,6 +58,6 @@ disciplinas = [
     'optativa 7',
 
     # Nono
-    'estagio supervisionado obrigatorio',
+    'eso',
     'tcc'
 ]

@@ -98,7 +98,7 @@ def retornar_professores(nome):
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'engenharia de software',
-                'interacao humano-computador',
+                'ihc',
             ],
         },
         'priscilla': {
@@ -113,7 +113,7 @@ def retornar_professores(nome):
             'dias_sem_lecionar': [2, 3],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
-                'projeto e analise de algoritmos',
+                'paa',
                 'optativa 5',
             ],
         },
@@ -132,7 +132,7 @@ def retornar_professores(nome):
             'conjunto_de_disciplinas': [
                 'redes de computadores',
                 'optativa 1',
-                'estagio supervisionado obrigatorio',
+                'eso',
             ],
 
         },
@@ -159,7 +159,7 @@ def retornar_professores(nome):
             'conjunto_de_disciplinas': [
                 'introducao a computacao',
                 'sistemas operacionais',
-                'computadores e sociedade',
+                'comp e sec',
             ],
 
         },
@@ -184,8 +184,8 @@ def retornar_professores(nome):
             'dias_sem_lecionar': [0, 1],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
-                'projeto de desenvolvimento',
-                'estagio supervisionado obrigatorio',
+                'projetao',
+                'eso',
             ],
 
         },
@@ -193,7 +193,7 @@ def retornar_professores(nome):
             'dias_sem_lecionar': [0, 1, 4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
-                'paradigmas de linguagens de programacao',
+                'plp',
                 'banco de dados',
             ],
         },
@@ -239,9 +239,9 @@ def retornar_disciplinas():
 
         Disciplina('arquitetura de computadores', 2, 4),
         Disciplina('engenharia de software', 2, 4),
-        Disciplina('paradigmas de linguagens de programacao', 2, 4),
+        Disciplina('plp', 2, 4),
         Disciplina('banco de dados', 2, 4),
-        Disciplina('projeto e analise de algoritmos', 2, 4),
+        Disciplina('paa', 2, 4),
 
         Disciplina('teoria da computacao', 2, 5),
         Disciplina('sistemas de informacao', 2, 5),
@@ -255,9 +255,9 @@ def retornar_disciplinas():
         Disciplina('sistemas distribuidos', 2, 6),
         Disciplina('computacao grafica', 2, 6),
 
-        Disciplina('interacao humano-computador', 2, 7),
-        Disciplina('projeto de desenvolvimento', 3, 7),
-        Disciplina('computadores e sociedade', 1, 7),
+        Disciplina('ihc', 2, 7),
+        Disciplina('projetao', 3, 7),
+        Disciplina('comp e soc', 1, 7),
         Disciplina('optativa 1', 2, 7),
         Disciplina('optativa 2', 2, 7),
         
@@ -267,6 +267,6 @@ def retornar_disciplinas():
         Disciplina('optativa 6', 2, 8),
         Disciplina('optativa 7', 2, 8),
 
-        Disciplina('estagio supervisionado obrigatorio', 1, 9),
+        Disciplina('eso', 1, 9),
         Disciplina('tcc', 1, 9),
     ]
