@@ -11,14 +11,14 @@ from modelos.disciplina import Disciplina
 def retornar_professores(nome):
     infos_professor = {
         'marcius': {
-            'dias_sem_lecionar': [],
+            'dias_sem_lecionar': [2, 3, 4],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'calculo 1',
             ],
         },
         'luis': {
-            'dias_sem_lecionar': [3, 4],
+            'dias_sem_lecionar': [4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'introducao a programacao',
@@ -51,14 +51,14 @@ def retornar_professores(nome):
             ],
         },
         'sansuke': {
-            'dias_sem_lecionar': [],
+            'dias_sem_lecionar': [1],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'calculo 2',
             ],
         },
         'wellington': {
-            'dias_sem_lecionar': [],
+            'dias_sem_lecionar': [2],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'fisica'
@@ -72,7 +72,7 @@ def retornar_professores(nome):
             ],
         },
         'helder': {
-            'dias_sem_lecionar': [3, 4],
+            'dias_sem_lecionar': [],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas digitais',
@@ -80,21 +80,21 @@ def retornar_professores(nome):
             ],
         },
         'niege': {
-            'dias_sem_lecionar': [],
+            'dias_sem_lecionar': [1],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'metodologia cientifica'
             ],
         },
         'diana': {
-            'dias_sem_lecionar': [],
+            'dias_sem_lecionar': [0],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'ingles'
             ],
         },
         'r. andrade': {
-            'dias_sem_lecionar': [2, 3, 4],
+            'dias_sem_lecionar': [3, 4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'engenharia de software',
@@ -110,7 +110,7 @@ def retornar_professores(nome):
             ],
         },
         'alvaro': {
-            'dias_sem_lecionar': [2, 3],
+            'dias_sem_lecionar': [2],
             'aulas_concentradas': False,
             'conjunto_de_disciplinas': [
                 'paa',
@@ -118,7 +118,7 @@ def retornar_professores(nome):
             ],
         },
         'maria': {
-            'dias_sem_lecionar': [2, 3, 4],
+            'dias_sem_lecionar': [4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'teoria da computacao',
@@ -137,7 +137,7 @@ def retornar_professores(nome):
 
         },
         'assuero': {
-            'dias_sem_lecionar': [2, 3, 4],
+            'dias_sem_lecionar': [3, 4],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas de informacao',
@@ -154,7 +154,7 @@ def retornar_professores(nome):
 
         },
         'sergio': {
-            'dias_sem_lecionar': [0, 1, 2],
+            'dias_sem_lecionar': [0, 1],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'introducao a computacao',
@@ -173,7 +173,7 @@ def retornar_professores(nome):
 
         },
         'jean': {
-            'dias_sem_lecionar': [0, 1, 2],
+            'dias_sem_lecionar': [1, 2],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'sistemas distribuidos',
@@ -190,7 +190,7 @@ def retornar_professores(nome):
 
         },
         'dimas': {
-            'dias_sem_lecionar': [0, 1, 4],
+            'dias_sem_lecionar': [0, 1],
             'aulas_concentradas': True,
             'conjunto_de_disciplinas': [
                 'plp',

@@ -11,16 +11,19 @@ from factory.oferta_disciplinas import professores_disciplinas
 from factory.populacao_inicial import preencher_horario, criar_populacao_inicial
 from modelos.curso import Curso
 from constantes import *
+import time
+
+start_time = time.time()
 
 DOCENTES, DISCIPLINAS = professores_disciplinas();
-GERACAO_GLOBAL = 0
+TOTAL_GERACOES = 0
 
 def menos_apto(populacao):
-  infos = { 'aptidao': 0, 'grade': [], 'posicao': None }
+  infos = { 'aptidao': MELHOR_APTIDAO, 'grade': [], 'posicao': None }
 
   for index, grade in enumerate(populacao):
-    aptidao = calcular_aptidao_por_choque(grade)
-    if aptidao < calcular_aptidao_por_choque(infos['grade']):
+    aptidao = calcular_aptidao(grade)
+    if aptidao < calcular_aptidao(infos['grade']):
       infos['aptidao'] = aptidao
       infos['grade'] = grade
       infos['posicao'] = index
@@ -31,7 +34,7 @@ def mais_apto(populacao):
   infos = { 'aptidao': -99999999, 'grade': [], 'posicao': None }
 
   for index, grade in enumerate(populacao):
-    aptidao = calcular_aptidao_por_choque(grade)
+    aptidao = calcular_aptidao(grade)
     if aptidao > infos['aptidao']:
       infos['aptidao'] = aptidao
       infos['grade'] = grade
@@ -69,13 +72,13 @@ def crossover(grade1, grade2):
   return grade_filha
 
 
-def calcular_aptidao_por_choque(grade):
-    aptidao = 0
+def calcular_aptidao(grade):
+    aptidao = MELHOR_APTIDAO
     
     # Criar um dicionário para armazenar os horários de cada docente
     horarios_docentes = { docente.nome: set() for docente in DOCENTES }
     
-    # Percorrer a grade de horários
+    # Percorrer a grade de horários verificando se há choques
     for periodo in grade:
         for dia in range(QUANT_DE_DIAS):
             for horario in range(QUANT_DE_HORARIOS):
@@ -83,14 +86,23 @@ def calcular_aptidao_por_choque(grade):
                 if disciplina:
                     for docente in disciplina.docentes:
                         if (dia, horario) in horarios_docentes[docente.nome]:
-                            # Choque de horário, remover 500 pontos
-                            aptidao -= 500
+                            # Choque de horário, remover pontuação
+                            aptidao -= PONTUACAO_CHOQUE
                             #print(f"Choque no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]} do professor {docente.nome}")
+                            break
                         else:
                             horarios_docentes[docente.nome].add((dia, horario))
-    
-    return aptidao
+                            dia_bom = True
+                            for dia_nao_lecionavel in docente.dias_sem_lecionar:
+                               if dia_nao_lecionavel == dia:
+                                  aptidao -= PONTUACAO_DIA_NAO_LECIONAVEL
+                                  dia_ruim = False
+                                  #print(f"Docente {docente.nome} lecionando no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]}")
+                                  break
+                            if dia_bom:
+                               aptidao += 1
 
+    return aptidao
 
 """
   Troca as grades mais aptas pelas menos aptas
@@ -99,7 +111,7 @@ def calcular_aptidao_por_choque(grade):
 def thanos(novas_grades, populacao):
   for nova_grade in novas_grades:
       grade_ruim = menos_apto(populacao)
-      nova_aptidao = calcular_aptidao_por_choque(nova_grade)
+      nova_aptidao = calcular_aptidao(nova_grade)
       if nova_aptidao > grade_ruim['aptidao']:
           populacao[grade_ruim['posicao']] = nova_grade
 
@@ -122,7 +134,7 @@ while melhor['aptidao'] < 0 and melhor['geracao'] < QUANT_GERACOES_SEM_MELHORIA:
 
       novas_grades.append(crossover(grade1, grade2))
 
-  GERACAO_GLOBAL += 1
+  TOTAL_GERACOES += 1
   melhor['geracao'] += 1
   thanos(novas_grades, populacao)
 
@@ -134,9 +146,21 @@ while melhor['aptidao'] < 0 and melhor['geracao'] < QUANT_GERACOES_SEM_MELHORIA:
     melhor['geracao'] = 0
 
 
-Curso.imprimir_grade(melhor['grade'])
-print(melhor['aptidao'])
-print(melhor['posicao'])
-print(GERACAO_GLOBAL)
+if(melhor['aptidao'] == MELHOR_APTIDAO):
+   Curso.imprimir_grade(melhor['grade'])
+   print("Encontrou a grade perfeita")
+elif(melhor['aptidao'] <= (PONTUACAO_CHOQUE * -1)):
+  print("Não encontrou grade sem choque de horários")
+else:
+   print("Melhor grade:")
+   Curso.imprimir_grade(melhor['grade'])
+
+print(f'Total de gerações: {TOTAL_GERACOES}')
 
 
+end_time = time.time()
+execution_time = end_time - start_time
+
+minutos = int(execution_time // 60)
+segundos = int(execution_time % 60)
+print(f"Tempo de execução: {minutos} minuto(s) e {segundos} segundo(s)")
