@@ -41,8 +41,31 @@ def crossover(grade1, grade2):
   return grade_filha
 
 
-populacao_inicial = criar_populacao_inicial(DISCIPLINAS)
+populacao = criar_populacao_inicial(DISCIPLINAS)
 
-grade = crossover(populacao_inicial[0], populacao_inicial[1])
+grade = crossover(populacao[0], populacao[1])
+
+def calcular_aptidao_por_choque(grade, DOCENTES):
+    aptidao = 0
+    
+    # Criar um dicionário para armazenar os horários de cada docente
+    horarios_docentes = {docente.nome: set() for docente in DOCENTES}
+    
+    # Percorrer a grade de horários
+    for periodo in grade:
+        for dia in range(QUANT_DE_DIAS):
+            for horario in range(QUANT_DE_HORARIOS):
+                disciplina = periodo[horario][dia]
+                if disciplina:
+                    for docente in disciplina.docentes:
+                        if (dia, horario) in horarios_docentes[docente.nome]:
+                            # Choque de horário, remover 500 pontos
+                            aptidao -= 500
+                            print(f"Choque no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]} do professor {docente.nome}")
+                        else:
+                            horarios_docentes[docente.nome].add((dia, horario))
+    
+    return aptidao
 
 Curso.imprimir_grade(grade)
+print(calcular_aptidao_por_choque(grade, DOCENTES))
