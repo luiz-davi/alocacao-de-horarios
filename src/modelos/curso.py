@@ -1,5 +1,6 @@
-from modelos.enums.horarios import lista_horarios
-from modelos.enums.dias import lista_dias
+from src.constantes import QUANT_DE_HORARIOS
+from src.constantes import LISTA_HORARIOS
+from src.constantes import LISTA_DIAS
 from tabulate import tabulate
 
 class Curso:
@@ -8,17 +9,15 @@ class Curso:
         self.grade = grade
 
     def imprimir_grade(grade):
-        quantidade_horarios = len(lista_horarios)
-
         # Percorre todos os períodos do curso
         for periodo, matriz in enumerate(grade, start=1):
             # Adiciona o cabeçalho com número do período e dias letivos da semana
-            tabela = [[f"Periodo {periodo}"] + lista_dias]
+            tabela = [[f"Periodo {periodo}"] + LISTA_DIAS]
 
             # Percorre todas as linhas (horários)
-            for horario in range(quantidade_horarios):
+            for horario in range(QUANT_DE_HORARIOS):
                 # Adiciona o horário na esquerda, abaixo do número do período
-                linha = [lista_horarios[horario]]
+                linha = [LISTA_HORARIOS[horario]]
 
                 # Percorre todas as colunas (dias)
                 for dia in range(len(matriz[horario])):
