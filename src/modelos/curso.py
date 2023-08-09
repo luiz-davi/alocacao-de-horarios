@@ -3,9 +3,8 @@ from modelos.enums.dias import lista_dias
 from tabulate import tabulate
 
 class Curso:
-    def __init__(self, nome, quantidade_periodos, grade = None):
+    def __init__(self, nome, grade = None):
         self.nome = nome
-        self.quantidade_periodos = quantidade_periodos
         self.grade = grade
 
     def imprimir_grade(grade):
@@ -23,7 +22,11 @@ class Curso:
 
                 # Percorre todas as colunas (dias)
                 for dia in range(len(matriz[horario])):
-                    linha.append(matriz[horario][dia])
+                    if matriz[horario][dia] is None:
+                        linha.append('-')
+                    else:
+                        linha.append(matriz[horario][dia].nome)
+                    
                 tabela.append(linha)
 
             print(tabulate(tabela, tablefmt='grid'))

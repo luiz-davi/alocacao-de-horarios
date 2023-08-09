@@ -269,4 +269,8 @@ def retornar_disciplinas():
 
         Disciplina('eso', 1, 9),
         Disciplina('tcc', 1, 9),
+        Disciplina('-', 3, 9),
+        Disciplina('-', 2, 9),
+        Disciplina('-', 2, 9),
+        Disciplina('-', 1, 9),
     ]
