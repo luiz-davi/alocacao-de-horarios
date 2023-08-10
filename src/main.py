@@ -13,7 +13,6 @@ from modelos.curso import Curso
 from constantes import *
 import time
 
-start_time = time.time()
 
 DOCENTES, DISCIPLINAS = professores_disciplinas();
 TOTAL_GERACOES = 0
@@ -71,6 +70,11 @@ def crossover(grade1, grade2):
   
   return grade_filha
 
+def verificar_concentracao(concentracao):
+    for index in range(len(concentracao) - 1):
+        if concentracao[index] + 1 != concentracao[index + 1]:
+            return False
+    return True
 
 def calcular_aptidao(grade):
     aptidao = MELHOR_APTIDAO
@@ -85,22 +89,37 @@ def calcular_aptidao(grade):
                 disciplina = periodo[horario][dia]
                 if disciplina:
                     for docente in disciplina.docentes:
+                        # validaçao choque de horário
                         if (dia, horario) in horarios_docentes[docente.nome]:
                             # Choque de horário, remover pontuação
                             aptidao -= PONTUACAO_CHOQUE
                             #print(f"Choque no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]} do professor {docente.nome}")
                             break
+                        # validaçao dos dias não lecionado preferidos pelo professor
                         else:
                             horarios_docentes[docente.nome].add((dia, horario))
+                            # validacao dos horarios dos professores
                             dia_bom = True
                             for dia_nao_lecionavel in docente.dias_sem_lecionar:
-                               if dia_nao_lecionavel == dia:
+                                if dia_nao_lecionavel == dia:
                                   aptidao -= PONTUACAO_DIA_NAO_LECIONAVEL
                                   dia_bom = False
                                   #print(f"Docente {docente.nome} lecionando no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]}")
                                   break
                             if dia_bom:
-                               aptidao += 2
+                                aptidao += 2
+
+    # validacao de dias consecutivos
+    for docente in DOCENTES:
+        if docente.aulas_concentradas:
+          concentracao = []
+          horarios = horarios_docentes[docente.nome]
+
+          for horario in horarios:
+            concentracao.append(horario[0])
+
+          if not verificar_concentracao(sorted(concentracao)):
+            aptidao -= PONTUACAO_AULAS_CONCENTRADAS
 
     return aptidao
 
@@ -125,6 +144,8 @@ melhor = {
   'posicao': esforcado['posicao'],
   'geracao': 0
 }
+
+start_time = time.time()
 
 while melhor['geracao'] < QUANT_GERACOES_SEM_MELHORIA:
   novas_grades = []
@@ -156,6 +177,7 @@ else:
    Curso.imprimir_grade(melhor['grade'])
 
 print(f'Total de gerações: {TOTAL_GERACOES}')
+print(f"Aptidao: {melhor['aptidao']}")
 
 
 end_time = time.time()
