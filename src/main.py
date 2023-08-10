@@ -96,11 +96,11 @@ def calcular_aptidao(grade):
                             for dia_nao_lecionavel in docente.dias_sem_lecionar:
                                if dia_nao_lecionavel == dia:
                                   aptidao -= PONTUACAO_DIA_NAO_LECIONAVEL
-                                  dia_ruim = False
+                                  dia_bom = False
                                   #print(f"Docente {docente.nome} lecionando no dia {LISTA_DIAS[dia]} às {LISTA_HORARIOS[horario]}")
                                   break
                             if dia_bom:
-                               aptidao += 1
+                               aptidao += 2
 
     return aptidao
 
@@ -126,7 +126,7 @@ melhor = {
   'geracao': 0
 }
 
-while melhor['aptidao'] < 0 and melhor['geracao'] < QUANT_GERACOES_SEM_MELHORIA:
+while melhor['geracao'] < QUANT_GERACOES_SEM_MELHORIA:
   novas_grades = []
   for i in range(0, len(populacao), 2):
       grade1 = populacao[i]
