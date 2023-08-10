@@ -41,9 +41,6 @@ def mais_apto(populacao):
   
   return infos
 
-"""
-gera uma grade com base em duas outras grades
-"""
 def mutacao(grade):
   periodo_mutado = random.randint(1, QUANT_DE_PERIODOS)
 
@@ -124,7 +121,7 @@ def calcular_aptidao(grade):
     return aptidao
 
 """
-  Troca as grades mais aptas pelas menos aptas
+  Troca as grades menos aptas pelas mais aptas
   *menos_apto return ex.: { 'aptidao': -3000, 'grade': [...], 'posicao': 0 }
 """
 def thanos(novas_grades, populacao):
