@@ -102,7 +102,7 @@ def calcular_aptidao(grade):
     return aptidao
 
 """
-  Troca as grades mais aptas pelas menos aptas
+  Troca as grades menos aptas pelas mais aptas
   *menos_apto return ex.: { 'aptidao': -3000, 'grade': [...], 'posicao': 0 }
 """
 def thanos(novas_grades, populacao):
