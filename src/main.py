@@ -42,9 +42,6 @@ def mais_apto(populacao):
   
   return infos
 
-"""
-gera uma grade com base em duas outras grades
-"""
 def mutacao(grade):
   periodo_mutado = random.randint(1, QUANT_DE_PERIODOS)
 
